@@ -4,12 +4,12 @@ title: About
 permalink: /about/
 ---
 
-Some information about you!
+Currently a data science student at Metis
 
 ### More Information
 
-A place to include any other types of information that you'd like to include about yourself.
+I don't quite know what to put here yet, I am new to this blog stuff
 
 ### Contact me
 
-[email@domain.com](mailto:email@domain.com)
+[matt@networkinguys.com](mailto:matt@networkinguys.com)
