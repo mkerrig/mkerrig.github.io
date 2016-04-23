@@ -7,7 +7,7 @@ This is going to be part 1 of a 3 part series of the different components of my 
 
 So a quick overview of my methodology when it comes to scraping. 
 
-Here I am using Beautiful soup, however usually I prefer Scrapy, which is another python scraping framework. I use a tool called selector gadget to find CSS selectors for me, and if I don't get what I want that way, I use selector gadget to point me in the right direction, then just inspect the element and use CSS logic highlighted here: [http://www.w3schools.com/cssref/css_selectors.asp] 
+Here I am using Beautiful soup, however usually I prefer Scrapy, which is another python scraping framework. I use a tool called selector gadget to find CSS selectors for me, and if I don't get what I want that way, I use selector gadget to point me in the right direction, then just inspect the element and use CSS logic highlighted here: <http://www.w3schools.com/cssref/css_selectors.asp>
 
 _(Note: Not all the operations on this page can be used by most scraping libraries, specifically the nth-* commands other than nth-of-type, at least for beautiful soup)_
 
