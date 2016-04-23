@@ -77,3 +77,35 @@ Lets finsih up the method.
     f.close()
 ```
 
+So now we have all the links each alphabetical index, so now we get to scrape... more links. 
+This time it's going to be the link to each individual movie page. Click on the selector gadget again, 
+except this time from any of the alphabetical index pages, click on one of the movies, the deselect something
+other than a movie. The selector you will see is: **a b** 
+
+However if you try and use that selector you won't get the best results. So after inspecting the element and adding some logic of my own from the cheat sheet I found a better selector: **#body > div table table tr a[href^="/movies/?"]** 
+
+Now time to get the movie page links, here is the method to do so:
+
+```python 
+def get_movie_links(links_list):
+    """
+    Scrape the links of each movie's respective in depth description page
+    """
+    print 'Creating movie links'
+    links =[]
+    f = open("movie_links.txt", "w") # Use the links we scraped earlier
+    base_url = 'http://www.boxofficemojo.com'
+    for end_url in links_list:
+        print 'Scraping: '+end_url+'\n'
+        response = requests.get(base_url+end_url)
+        soup = BeautifulSoup(response.content,'lxml')
+        tmp = soup.select('#body > div table table tr a[href^="/movies/?"]')
+        link = [elem['href'] for elem in tmp]
+        link.sort()
+        links.extend(link)
+    for line in links:
+        f.write(line.encode('utf-8'))
+        f.write('\n')
+    f.close()
+```
+Pretty much same things as earlier except with a few minor tweaks.
