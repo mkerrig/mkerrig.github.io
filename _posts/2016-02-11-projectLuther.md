@@ -63,10 +63,10 @@ Now lets look at the line below because a lot is going on.
 _*tmplink = list(set(soup.select('.alpha-nav-holder a')))*_
 
 list(set()) because the selector selects the links twice, once at the bottom, once at the top. 
-Notice the soup.select() instead of the more common soup.find(), select() allows you to select by  
-CSS selector instead of selecting by parent or child, just select it directly.
+Notice the soup.select() instead of the more common soup.find(), select() allows you to select by  CSS selector instead of selecting by parent or child, just select it directly.
 
 Lets finish up the method.
+
 ```python
         tmplink = list(set(soup.select('.alpha-nav-holder a'))) 
         link = [elem['href'] for elem in tmplink]
