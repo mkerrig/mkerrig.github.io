@@ -7,7 +7,7 @@ This is going to be part 1 of a 3 part series of the different components of my 
 
 So a quick overview of my methodology when it comes to scraping. 
 
-Here I am using Beautiful soup, however usually I prefer Scrapy, which is another python scraping framework. I use a tool called selector gadget to find CSS selectors for me, and if I don't get what I want that way, I use selector gadget to point me in the right direction, then just inspect the element and use CSS logic highlighted here: http://www.w3schools.com/cssref/css_selectors.asp 
+Here I am using Beautiful soup, however usually I prefer Scrapy, which is another python scraping framework. I use a tool called selector gadget to find CSS selectors for me, and if I don't get what I want that way, I use selector gadget to point me in the right direction, then just inspect the element and use CSS logic highlighted here: [http://www.w3schools.com/cssref/css_selectors.asp] 
 
 _(Note: Not all the operations on this page can be used by most scraping libraries, specifically the nth-* commands other than nth-of-type, at least for beautiful soup)_
 
@@ -31,11 +31,11 @@ Now back to the alphabetical index.
 
 This is what it looks like:
 
-http://www.boxofficemojo.com/movies/alphabetical.htm?letter=A&p=.htm
+[http://www.boxofficemojo.com/movies/alphabetical.htm?letter=A&p=.htm]
 
 Now if you want to see what I am seeing I suggest you go over an get the selector gadget chrome add-on.
 
-https://chrome.google.com/webstore/detail/selectorgadget/mhjhnkcfbdhnjickkkdbjoemdmbfginb?hl=en
+[https://chrome.google.com/webstore/detail/selectorgadget/mhjhnkcfbdhnjickkkdbjoemdmbfginb?hl=en]
 
 Click on the selector gadget icon and then click on the "Ad-Ad" and then deselect something else other than the letter ranges, what you will see down in the bottom right corner is this selector: **.alpha-nav-holder a**
 
@@ -122,13 +122,13 @@ So quite a few helper methods need to be written.
 
 So lets take a look at two extreme cases for the movie pages. 
 
-The first being one with nearly complete information: http://www.boxofficemojo.com/movies/?id=starwars7.htm
+The first being one with nearly complete information: [http://www.boxofficemojo.com/movies/?id=starwars7.htm]
 
 There is a lot of information to be had on this page. Actors, Directors, Total Domestic gross, foreign gross, etc.
 We probably don't have to worry about "Related Stories" as they wouldn't really be pertinent to most movies success 
 at the box office.
 
-So lets take at the second source with almost no information: http://www.boxofficemojo.com/movies/?id=bestiaire.htm 
+So lets take at the second source with almost no information: [http://www.boxofficemojo.com/movies/?id=bestiaire.htm]
 
 So this doesn't have nearly as much information as Starwars, but it does still have the same summary box as Starwars. 
 However I wouldn't like to assume that they all have summary boxes. It appears there is a lot of variance in the kind of 
