@@ -48,7 +48,9 @@ def get_movie_alpha_index():
     directory
     """
     print 'Creating alpha index links'
-    alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ' # Each letter for the URL 
+    
+     # Each letter for the URL 
+    alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
     links = []
     f = open("alpha_index.txt", "w")
     
