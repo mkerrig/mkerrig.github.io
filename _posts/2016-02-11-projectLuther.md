@@ -58,7 +58,7 @@ def get_movie_alpha_index():
         response = requests.get(base_url+end_url)
         soup = BeautifulSoup(response.content,'lxml')]
 ```
-Now lets look at the link below because a lot is going on.
+Now lets look at the line below because a lot is going on.
 
 _*tmplink = list(set(soup.select('.alpha-nav-holder a')))*_
 
