@@ -51,7 +51,9 @@ def get_movie_alpha_index():
     alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ' # Each letter for the URL 
     links = []
     f = open("alpha_index.txt", "w")
-    f.write('/movies/alphabetical.htm?letter=NUM&p=.htm\n') # Scrape the titles that start with numbers
+    
+    # Scrape the titles that start with numbers
+    f.write('/movies/alphabetical.htm?letter=NUM&p=.htm\n') 
     base_url = 'http://www.boxofficemojo.com'
     for x in alphabet:
         end_url = '/movies/alphabetical.htm?letter='+x+'&p=.htm' 
