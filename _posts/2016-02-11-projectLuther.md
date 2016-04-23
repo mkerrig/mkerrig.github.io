@@ -79,7 +79,7 @@ Lets finish up the method.
 
 So now we have all the links for each alphabetical index, so now we get to scrape... more links. 
 This time it's going to be the link to each individual movie page. Click on the selector gadget again, 
-except this time from any of the alphabetical index pages, click on one of the movies, the deselect something
+except this time, from any of the alphabetical index pages, click on one of the movies. Then deselect something
 other than a movie. The selector you will see is: **a b** 
 
 However if you try and use that selector you won't get the best results. So after inspecting the element and adding some logic of my own from the cheat sheet I found a better selector: **#body > div table table tr a[href^="/movies/?"]** 
@@ -108,12 +108,12 @@ def get_movie_links(links_list):
         f.write('\n')
     f.close()
 ```
-Pretty much same things as earlier except with a few minor tweaks.
+Pretty much same thing as earlier except with a few minor tweaks.
 
 Now that we have the links of all the movies all we need to do is scrape all the pages.
 
 However before we do that there is quite a bit of information we need to parse on each page,
-and I'd rather just that information straight from the page instead of parsing it later.
+and I'd rather just get that information straight from the page instead of parsing it later.
 So quite a few helper methods need to be written.
 
 So lets take a look at two extreme cases for the movie pages. 
@@ -121,15 +121,15 @@ So lets take a look at two extreme cases for the movie pages.
 The first being one with nearly complete information: http://www.boxofficemojo.com/movies/?id=starwars7.htm
 
 There is a lot of information to be had on this page. Actors, Directors, Total Domestic gross, foreign gross, etc.
-We probably don't have to worry about "Related Stories" as they would really be pertinent to most movies success 
+We probably don't have to worry about "Related Stories" as they wouldn't really be pertinent to most movies success 
 at the box office.
 
-So lets take at the second souce with almost no information: http://www.boxofficemojo.com/movies/?id=bestiaire.htm 
+So lets take at the second source with almost no information: http://www.boxofficemojo.com/movies/?id=bestiaire.htm 
 
-So this doesn't have nearly as much information as Starwars, it does still have the same summary box as Starwars, 
-however I wouldn't like to assume that they all have them. It appears there is a lot of variance in the kind of 
-information that exists on any given page, so lets just make cases in case the information doesn't exist or 
-does exist, and we can take out data later if it doesn't have enough information.
+So this doesn't have nearly as much information as Starwars, but it does still have the same summary box as Starwars. 
+However I wouldn't like to assume that they all have summary boxes. It appears there is a lot of variance in the kind of 
+information that exists on any given page, so lets just handle for both case the information doesn't exist and if it  
+does exist, and then we can take data out later if it doesn't have enough information.
 
 So here are all the selectors we will need:
 
@@ -142,7 +142,7 @@ So here are all the selectors we will need:
 - Rankings: **.mp_box**
 
 We need to write helper methods to parse all of them. I would go through the details, but realistically it's
-just tedious dirty string parsing, nothing special about it, so I'm just going to post the methods:
+just tedious dirty string parsing, nothing really special about it. So I'm just going to post the methods:
 
 ```python
 def cast_format(cast_list):
@@ -500,3 +500,5 @@ def main_spider():
 #Run the script  
 main_spider()
 ```
+
+NOTE: All the scraping was on boxofficemojo.com, and their robots.txt allows you to pretty much scrape anywhere, however other sites would require a much different approach in that one would have to contruct a network of proxy servers to get past anti-scraping (really anti-DDOS) defense mechanisms. I plan on writing on article on how to go about doing this in the future as I have some experience in doing exactly this 
