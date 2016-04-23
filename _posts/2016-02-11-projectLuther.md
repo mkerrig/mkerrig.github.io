@@ -77,7 +77,7 @@ Lets finish up the method.
     f.close()
 ```
 
-So now we have all the links each alphabetical index, so now we get to scrape... more links. 
+So now we have all the links for each alphabetical index, so now we get to scrape... more links. 
 This time it's going to be the link to each individual movie page. Click on the selector gadget again, 
 except this time from any of the alphabetical index pages, click on one of the movies, the deselect something
 other than a movie. The selector you will see is: **a b** 
